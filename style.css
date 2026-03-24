@@ -397,6 +397,103 @@ p {
     box-shadow: 0 5px 20px rgba(255, 179, 0, 0.3);
 }
 
+/* ── Hero Tech Stack Teaser ── */
+.hero-tech-teaser {
+    margin-top: 2.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-direction: column;
+    animation: teaserFadeUp 0.8s ease both;
+    animation-delay: 0.3s;
+}
+
+@keyframes teaserFadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.teaser-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.teaser-label i {
+    font-size: 0.9rem;
+    color: var(--accent-glow-1);
+}
+
+.teaser-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.teaser-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.38rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.teaser-pill i {
+    font-size: 1rem;
+}
+
+.teaser-pill:hover {
+    background: rgba(124, 111, 247, 0.18);
+    border-color: var(--accent-glow-1);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(124, 111, 247, 0.28);
+}
+
+/* "View all" pill — golden accent + pulse */
+.teaser-pill--more {
+    background: rgba(255, 179, 0, 0.08);
+    border-color: rgba(255, 179, 0, 0.3);
+    color: var(--accent-glow-2);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    animation: teaserPulse 2.4s ease-in-out infinite;
+}
+
+.teaser-pill--more i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.teaser-pill--more:hover {
+    background: rgba(255, 179, 0, 0.18);
+    border-color: var(--accent-glow-2);
+    color: var(--accent-glow-2);
+    box-shadow: 0 6px 18px rgba(255, 179, 0, 0.28);
+}
+
+.teaser-pill--more:hover i {
+    transform: translateX(4px);
+}
+
+@keyframes teaserPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+    50%       { box-shadow: 0 0 0 6px rgba(255, 179, 0, 0.1); }
+}
+
 .hero-image {
     flex: 1;
     display: flex;
@@ -409,6 +506,7 @@ p {
     width: 380px;
     height: 380px;
     border-radius: 50%;
+    overflow: hidden;
     padding: 10px;
     background: linear-gradient(135deg, var(--accent-glow-2), var(--accent-glow-1));
     animation: morph 8s ease-in-out infinite;
